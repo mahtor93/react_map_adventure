@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.navbar-style{
+  position: absolute;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  top:0px;
+  background-color: black;
+  color:#f6f6f6;
+  width:100%;
+  height: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-section-title{
+  color:#f6f6f6;
+  padding-left: 50px;
+  align-items: center;
+}
+.navbar-section-menu{
+justify-self: center;
+}
+.navbar-section-menu ul{
+  list-style: none;
+}
+.navbar-section-menu ul li{
+  display: inline-block;
+  padding-right: 30px;
+  align-items: center;
+}
+.navbar-section-end{
+  display: inline-block;
+  justify-self: end;
+  padding-right: 40px;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.lista-bkn{
+  list-style: none;
+}
+
+.btn-salir{
+  background-color: #f6f6f6;
+  color:black;
+  font-size: 16px;
+  padding:10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor:pointer;
+}
+
+.btn{
+  font-size: 16px;
+  padding:10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor:pointer;
+}
+
+.btn-body{
+  background-color:deepskyblue;
+  color:#f6f6f6;
+}
+
+.btn-aventura{
+  background-color:green;
+  color:#f6f6f6;
+}
+
+.form-input{
+  border-radius: 20px;
+  padding:10px 20px;
+  border: 2px solid #ccc;
+}
+
+/* Tamaño del MapContainer*/
+.leaflet-container{
+  height: 500px;
 }
