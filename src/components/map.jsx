@@ -51,6 +51,7 @@ class Map extends React.Component{
 
 
         return(
+            <div>
             <MapContainer center={[this.state.lat,this.state.lng]} zoom={15} scrollWheelZoom={false}>  
             <TileLayer 
                attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -64,6 +65,7 @@ class Map extends React.Component{
             {this.renderMarkers()}
             </MapContainer>
             <button className="btn">cambiar user</button>
+            </div>
         );
     }
 
