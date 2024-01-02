@@ -58,7 +58,7 @@ class Map extends React.Component{
             />
             <Marker position={[this.state.lat,this.state.lng]} icon={this.playerIcon}>
                 <Popup>
-                    HOLA DESDE EL MAPA
+                    Tu estás aquí 
                 </Popup>
             </Marker>
             {this.renderMarkers()}
