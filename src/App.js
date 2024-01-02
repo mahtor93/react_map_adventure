@@ -37,7 +37,7 @@ let marcas = { //esto debiese salir de una base de datos.
   mark4: { 
     lat: -36.78358071599951, 
     lng: -73.21373377407333,
-    labrl:"Punta Chome",
+    label:"Punta Chome",
     icon: { 
       iconUrl: `${baseLandURL}grassland.png`, 
       iconSize: customIconSize 
