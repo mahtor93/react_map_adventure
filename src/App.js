@@ -1,6 +1,6 @@
 import './App.css';
-import Prueba from './components/pruebaClase';
-import Map from './components/map.jsx';
+
+
 import RenderMap from './components/mapFunction.jsx';
 
 let customIconSize = [50,50];

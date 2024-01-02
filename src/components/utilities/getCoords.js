@@ -14,6 +14,10 @@ export default function obtenerGPS(){
                 },
                 (error)=>{
                     reject(error.message);
+                },{
+                    enableHighAccuracy:true,
+                    timeout: 5000,
+                    maximumAge:0,
                 }
             );
         }else{
