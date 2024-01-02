@@ -91,8 +91,14 @@ const RenderMap = ({markers}) =>{
                 {renderMarkers()}
                 <MapComponent/>
             </MapContainer>
-            <button onClick={changeAvatar} className="btn btn-aventura">Cambiar Avatar</button>
-            <button onClick={changeMapLayer} className='btn btn-aventura'>{nameButton}</button>
+            <div className="row mt-3">
+                <div className="col-sm-3"/>
+                <div className="col-sm-6 d-flex justify-content-center">
+                    <button onClick={changeMapLayer} className='m-2 btn btn-sm btn-outline-success'>{nameButton}</button>
+                    <button onClick={changeAvatar} className="m-2 btn btn-sm btn-outline-success">Cambiar Avatar</button>
+                </div>
+                <div className="col-sm-3"/>
+            </div>
         </div>
     )
 }

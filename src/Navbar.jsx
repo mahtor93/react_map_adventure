@@ -1,48 +1,34 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 
 
 function NavBar(){
     return(
-        <div className='navbar-style'>
-
-            <div className="navbar-section-title">
-                <h1>Map Adventure</h1>
-            </div>
-            <div className="navbar-section-menu">
-                        <ul>
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Contac</li>
-                        </ul>
-                    </div>
-
-                <div className="navbar-section-end">    
-                    <button className="btn-salir">
-                        Salir
-                    </button>
-                </div>
-
-            <div className="navbar-burger-menu">
-                <input type="checkbox" id="burger-toggle" className="burger-toggle"/>
-                <label htmlFor="burger-toggle" className="burger-icon">&#9776;</label>
-                <div className="burger-menu">
-                    <div className="navbar-section-menu">
-                        <ul>
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Contac</li>
-                        </ul>
-                    </div>
-
-
-                </div>
-
-
-            </div>
-            
-
-        </div>
+<nav class="navbar navbar-expand-sm align-items-center bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#home"><h2>Map Adventure</h2></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#Home">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#About">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-bg-light" href="#Salir">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     );
 }
 

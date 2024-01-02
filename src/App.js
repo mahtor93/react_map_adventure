@@ -1,5 +1,6 @@
 import './App.css';
-
+import 'react-bootstrap';
+import 'bootstrap';
 
 import RenderMap from './components/mapFunction.jsx';
 
