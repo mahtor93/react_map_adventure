@@ -63,6 +63,7 @@ class Map extends React.Component{
             </Marker>
             {this.renderMarkers()}
             </MapContainer>
+            <button className="btn">cambiar user</button>
         );
     }
 
