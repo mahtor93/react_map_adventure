@@ -8,6 +8,7 @@ import obtenerGPS from './utilities/getCoords';
 
 const RenderMap = ({markers, props}) =>{
     const [position, setPosition]= useState({ lat: -36.76506926258808, lng: -73.17547131071257 });
+    const [centerMap , setCenterMap]= useState(position)
     const [numAvatar, setNumAvatar] = useState(0);
     const [mapLayer, setMapLayer] = useState('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
     const [mapAttribution, setMapAtrribution] = useState('Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community')
@@ -19,6 +20,7 @@ const RenderMap = ({markers, props}) =>{
         obtenerGPS()
         .then(resultado =>{
             setPosition(resultado);
+            setCenterMap(resultado);
             console.log(resultado);
         })
         .catch(error=>{
@@ -66,7 +68,7 @@ const RenderMap = ({markers, props}) =>{
 
     return(
         <div>
-            <MapContainer center={[position.lat, position.lng]} zoom={15} scrollWheelZoom={false}>
+            <MapContainer center={position} zoom={15} scrollWheelZoom={false}>
                 <TileLayer
                     attribution={mapAttribution}
                     url={mapLayer}

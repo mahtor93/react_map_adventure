@@ -3,7 +3,7 @@
 export default function obtenerGPS(){
     return new Promise((resolve,reject)=>{
         if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(
+            navigator.geolocation.watchPosition(
                 ({coords:{latitude,longitude}})=>{
                     const coordenadas ={
                         lat:latitude,
