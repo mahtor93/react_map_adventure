@@ -24,7 +24,7 @@ class Map extends React.Component{
         const { markers } = this.props;
         if (markers) {
             return Object.keys(markers).map((key) => {
-                const { lat, lng, icon } = markers[key];
+                const { lat, lng, label, icon } = markers[key];
                 const customIcon = new Icon({
                     iconUrl: icon.iconUrl,
                     iconSize: icon.iconSize,
@@ -33,7 +33,7 @@ class Map extends React.Component{
                 return (
                     <Marker key={key} position={[lat, lng]} icon={customIcon}>
                         <Popup>
-                            {key}
+                            {label}
                         </Popup>
                     </Marker>
                 );
