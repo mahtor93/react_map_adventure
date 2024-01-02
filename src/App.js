@@ -57,7 +57,6 @@ let marcas = { //esto debiese salir de una base de datos.
 function App() {
   return (
     <>
-      <h1>Mapa Funcion</h1>
       <RenderMap markers={marcas}/>
     </>
   );

@@ -1,14 +1,15 @@
 import 'leaflet/dist/leaflet.css';
 import React,{ useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import obtenerGPS from './utilities/getCoords';
 
 
 
-const RenderMap = ({markers, props}) =>{
+const RenderMap = ({markers}) =>{
+    
     const [position, setPosition]= useState({ lat: -36.76506926258808, lng: -73.17547131071257 });
-    const [centerMap , setCenterMap]= useState(position)
+    const [centerMap , setCenterMap]= useState(position);
     const [numAvatar, setNumAvatar] = useState(0);
     const [mapLayer, setMapLayer] = useState('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
     const [mapAttribution, setMapAtrribution] = useState('Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community')
@@ -27,6 +28,15 @@ const RenderMap = ({markers, props}) =>{
             console.error('Error al obtener el valor:', error);
         });
     },[]);
+
+
+    const MapComponent = () => {
+        const map = useMap();
+        useEffect(()=>{
+            map.panTo([position.lat,position.lng])
+        })
+        return null;
+    }
 
     const changeAvatar = () =>{
         setNumAvatar((prevNumAvatar)=>(prevNumAvatar+1)%listAvatar.length);
@@ -68,7 +78,7 @@ const RenderMap = ({markers, props}) =>{
 
     return(
         <div>
-            <MapContainer center={position} zoom={15} scrollWheelZoom={false}>
+            <MapContainer center={centerMap} zoom={15} scrollWheelZoom={false}>
                 <TileLayer
                     attribution={mapAttribution}
                     url={mapLayer}
@@ -79,6 +89,7 @@ const RenderMap = ({markers, props}) =>{
                     </Popup>
                 </Marker>
                 {renderMarkers()}
+                <MapComponent/>
             </MapContainer>
             <button onClick={changeAvatar} className="btn btn-aventura">Cambiar Avatar</button>
             <button onClick={changeMapLayer} className='btn btn-aventura'>{nameButton}</button>
