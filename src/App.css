@@ -74,6 +74,6 @@ justify-self: center;
 
 /* Tamaño del MapContainer*/
 .leaflet-container{
-  height: 800px;
+  height: 500px;
   width: auto;
 }
