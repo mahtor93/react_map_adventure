@@ -14,8 +14,6 @@ const RenderMap = ({markers, props}) =>{
     const [nameButton, setNameButton] = useState('Ver Cotas');
     const listAvatar = ['adventurer','adventurer_f','alchemy','assasin','barbarian','bow','crossbow','dragon','druid','gunnery','knight','magician','martial','monk','ninja','priest','samurai','swordsman','wizard'];
     
-    const coordenadas = obtenerGPS();
-    console.log(coordenadas);
 
     const changeAvatar = () =>{
         setNumAvatar((prevNumAvatar)=>(prevNumAvatar+1)%listAvatar.length);
