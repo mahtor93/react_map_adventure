@@ -7,7 +7,7 @@ function NavBar(){
     return(
 <nav class="navbar navbar-expand-sm align-items-center bg-dark navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#home"><h2>Map Adventure</h2></a>
+    <a class="navbar-brand" href="#home"><h2>MapAventuras</h2></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
