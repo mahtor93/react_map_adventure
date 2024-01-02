@@ -1,5 +1,5 @@
 import 'leaflet/dist/leaflet.css';
-import React,{ useState, Component } from 'react';
+import React,{ useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import obtenerGPS from './utilities/getCoords';
@@ -14,6 +14,17 @@ const RenderMap = ({markers, props}) =>{
     const [nameButton, setNameButton] = useState('Ver Cotas');
     const listAvatar = ['adventurer','adventurer_f','alchemy','assasin','barbarian','bow','crossbow','dragon','druid','gunnery','knight','magician','martial','monk','ninja','priest','samurai','swordsman','wizard'];
     
+
+    useEffect(()=>{
+        obtenerGPS()
+        .then(resultado =>{
+            setPosition(resultado);
+            console.log(resultado);
+        })
+        .catch(error=>{
+            console.error('Error al obtener el valor:', error);
+        });
+    },[]);
 
     const changeAvatar = () =>{
         setNumAvatar((prevNumAvatar)=>(prevNumAvatar+1)%listAvatar.length);
