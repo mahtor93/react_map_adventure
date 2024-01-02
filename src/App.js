@@ -57,13 +57,8 @@ let marcas = { //esto debiese salir de una base de datos.
 function App() {
   return (
     <>
-      <h1>Mapa clase:</h1>
-      <Map markers={marcas} />
-      <h1>Mapa funcion:</h1>
-      <RenderMap />
-      <p>Lorem ipsum</p>
-
-      <Prueba title="Wena TEST" names={['alfa', 'beta', 'gamma', 'delta', 'epsyle']} />
+      <h1>Mapa Funcion</h1>
+      <RenderMap markers={marcas}/>
     </>
   );
 }
@@ -72,5 +67,5 @@ export default App;
 
 
 /*
-
+<Prueba title="Wena TEST" names={['alfa', 'beta', 'gamma', 'delta', 'epsyle']} />
 */

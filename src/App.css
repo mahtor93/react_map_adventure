@@ -51,6 +51,7 @@ justify-self: center;
   font-size: 16px;
   padding:10px 20px;
   border: none;
+  margin: 10px;
   border-radius: 20px;
   cursor:pointer;
 }
