@@ -10,7 +10,7 @@ let marcas = { //esto debiese salir de una base de datos.
   mark1: { 
     lat: -36.812863439022, 
     lng: -73.1736491910276, 
-    label:"",
+    label:"Cueva del Pirata",
     icon: { 
       iconUrl: `${baseLandURL}cave.png`, 
       iconSize: customIconSize
@@ -19,7 +19,7 @@ let marcas = { //esto debiese salir de una base de datos.
   mark3: { 
     lat: -36.765003045678036, 
     lng: -73.1828943630428, 
-    label:"",
+    label:"Teta Norte",
     icon: { 
       iconUrl: `${baseLandURL}savannah.png`,
       iconSize: customIconSize
@@ -28,7 +28,7 @@ let marcas = { //esto debiese salir de una base de datos.
   mark2: { 
     lat: -36.797523132216675, 
     lng: -73.17816721673245,
-    label:"",
+    label:"Playa Rocoto",
     icon: { 
       iconUrl: `${baseLandURL}beach.png`,
       iconSize: customIconSize
@@ -37,7 +37,7 @@ let marcas = { //esto debiese salir de una base de datos.
   mark4: { 
     lat: -36.78358071599951, 
     lng: -73.21373377407333,
-    labrl:"",
+    labrl:"Punta Chome",
     icon: { 
       iconUrl: `${baseLandURL}grassland.png`, 
       iconSize: customIconSize 
@@ -46,7 +46,7 @@ let marcas = { //esto debiese salir de una base de datos.
   mark5: { 
     lat: -36.76875857064171, 
     lng: -73.20465052631701,
-    label:"",
+    label:"Entre Chome y Perone",
     icon: { 
       iconUrl: `${baseLandURL}sea.png`, 
       iconSize: customIconSize 
