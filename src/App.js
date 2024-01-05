@@ -59,6 +59,11 @@ function App() {
   return (
     <>
       <RenderMap markers={marcas}/>
+      <button onClick={async ()=>{
+        const res = await fetch('http://localhost:3001/users')
+        const data = await res.json()
+        console.log(data);
+      }} className='btn btn-warning'>WAT!</button>
     </>
   );
 }
