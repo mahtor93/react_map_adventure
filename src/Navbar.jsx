@@ -11,7 +11,7 @@ function NavBar(){
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse justift-content-end d-flex" id="collapsibleNavbar">
+        <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav">
                 <li className="nav-item">
                 <a className="nav-link" href="#Home">Inicio</a>
