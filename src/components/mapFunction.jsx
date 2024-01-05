@@ -29,6 +29,7 @@ const RenderMap = ({markers}) =>{
         });
     },[]);
 
+ 
 
     const MapComponent = () => {
         const map = useMap();
