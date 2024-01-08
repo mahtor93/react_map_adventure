@@ -9,7 +9,6 @@ const getMapData = async () =>{
         }
 
         const data = await res.json();
-        console.log(data);
         const marcas = Object.values(data);
         return {marks:marcas};
 

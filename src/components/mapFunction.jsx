@@ -3,6 +3,7 @@ import React,{ useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import obtenerGPS from './utilities/getCoords';
+import renderMarkers from './utilities/markerUtils';
 
 
 
@@ -22,7 +23,6 @@ const RenderMap = ({markers}) =>{
         .then(resultado =>{
             setPosition(resultado);
             setCenterMap(resultado);
-            console.log(resultado);
         })
         .catch(error=>{
             console.error('Error al obtener el valor:', error);
@@ -56,27 +56,33 @@ const RenderMap = ({markers}) =>{
         setNameButton((prevNameButton)=>prevNameButton==='Ver Cotas'?'Ver Terreno':'Ver Cotas');
     }
 
-    const renderMarkers = () => {
-        if (markers) {
-            return Object.keys(markers).map((key) => {
-                const { lat, lng, label, icon } = markers[key];
-                const customIcon = new Icon({
-                    iconUrl: icon.iconUrl,
-                    iconSize: icon.iconSize,
-                });
-                return (
-                   
-                        <Marker key={key} position={[lat, lng]} icon={customIcon}>
+/*
+    const renderMarkers = () =>{
+        const arrMarkers = [];
+
+        if(markers){
+            markers.forEach(marker=>{
+                return marker.map((item)=>{
+                    const {lat,lng,label,name_mark} = item;
+                    const locate = latLng(lat,lng);
+                    const customIcon = new Icon({
+                        iconUrl: `${rutaBaseIconos}placeholder.png`,
+                        iconSize:[50,50]
+                    })
+                    arrMarkers.push(
+                        <Marker key={name_mark} position={locate} icon={customIcon}>
                             <Popup>
                                 {label}
                             </Popup>
                         </Marker>
-                );
+                    )
+                    
+                });
             });
+            return(arrMarkers);
         }
-        return null;
     }
-
+  */
     return(
         <div>
             <MapContainer center={centerMap} zoom={15} scrollWheelZoom={false}>
@@ -89,7 +95,7 @@ const RenderMap = ({markers}) =>{
                         Tu estás aquí
                     </Popup>
                 </Marker>
-                {renderMarkers()}
+                {renderMarkers(markers)}
                 <MapComponent/>
             </MapContainer>
             <div className="row mt-3">

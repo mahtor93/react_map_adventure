@@ -5,10 +5,6 @@ import React, { useState } from 'react';
 import getMapData from './services/map.service.js';
 import RenderMap from './components/mapFunction.jsx';
 
-
-let marcas = {};
-
-
 /*
 let customIconSize = [50,50];
 let baseLandURL = '/map_utilities/markers/land/'
