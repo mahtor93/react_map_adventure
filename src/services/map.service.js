@@ -1,7 +1,7 @@
 //Obtener set de marcas desde el mapa. (Son varias)
 export const getMapData = async () =>{
     try{
-        const res = await fetch('https://mapadventure-backend.onrender.com/users') //obtiene datos desde endpoint declarado index.js
+        const res = await fetch('http://localhost:3001/users') //obtiene datos desde endpoint declarado index.js
         if(!res.ok){
             throw new Error('Error en la red');
         }
@@ -20,7 +20,7 @@ export const getMapData = async () =>{
 
 export const getZonesMap = async () =>{
     try{
-        const res = await fetch('https://mapadventure-backend.onrender.com/group-markers')
+        const res = await fetch('http://localhost:3001/group-markers')
         if(!res.ok){
             throw new Error('Error en la red');
         }
