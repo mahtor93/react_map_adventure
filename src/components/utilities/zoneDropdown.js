@@ -23,16 +23,18 @@ const DropdownZones=()=> {
         }
     },[zonasFetched])
 
+    const zonasFlat = Array.isArray(zonas) ? zonas.flat() : [];
+
     return(
-<div className='dropdown'>
-     <button className='btn btn-warning dropdown-toggle' type='button' id='zonasDropdown' data-toggle='dropdown' aria-expanded='false'>
-         Selecciona una Zona
-     </button>
-     <div className="dropdown-menu" aria-labelledby='zonasDropdown'>
-         {zonas && zonas.map((zona,index) =>(
-             <button key={index} className='dropdown-item' type="button">{zona.name_group_mark}</button>
-         ))}
-     </div>
+<div>
+<select className="form-select" aria-label='Default select example'>
+                <option selected>Selecciona una Zona</option>
+                {zonasFlat.map((zona) => (
+                    <option key={zona.id_group_mark} value={zona.id_group_mark}>
+                        {zona.name_group_mark}
+                    </option>
+                ))}
+</select>
  </div>
   )
 }
