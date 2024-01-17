@@ -38,7 +38,3 @@ const DropdownZones=()=> {
 }
 
 export default DropdownZones;
-
-/*
-
-*/
