@@ -24,7 +24,7 @@ const DropdownZones=()=> {
         }
     },[zonasFetched])
     
-    const zonasFlat = zonas.flat();
+    const zonasFlat = Array.isArray(zonas) ? zonas.flat() : [];
 
     return(
 <div>
