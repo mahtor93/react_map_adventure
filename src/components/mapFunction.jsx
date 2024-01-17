@@ -56,33 +56,6 @@ const RenderMap = ({markers}) =>{
         setNameButton((prevNameButton)=>prevNameButton==='Ver Cotas'?'Ver Terreno':'Ver Cotas');
     }
 
-/*
-    const renderMarkers = () =>{
-        const arrMarkers = [];
-
-        if(markers){
-            markers.forEach(marker=>{
-                return marker.map((item)=>{
-                    const {lat,lng,label,name_mark} = item;
-                    const locate = latLng(lat,lng);
-                    const customIcon = new Icon({
-                        iconUrl: `${rutaBaseIconos}placeholder.png`,
-                        iconSize:[50,50]
-                    })
-                    arrMarkers.push(
-                        <Marker key={name_mark} position={locate} icon={customIcon}>
-                            <Popup>
-                                {label}
-                            </Popup>
-                        </Marker>
-                    )
-                    
-                });
-            });
-            return(arrMarkers);
-        }
-    }
-  */
     return(
         <div>
             <MapContainer center={centerMap} zoom={15} scrollWheelZoom={false}>

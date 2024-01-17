@@ -12,11 +12,11 @@ const renderMarkers = (markers) =>{
                 const {lat,lng,label,name_mark} = item;
                 const locate = latLng(lat,lng);
                 const customIcon = new Icon({
-                    iconUrl: `${rutaBaseIconos}placeholder.png`,
+                    iconUrl: `${rutaBaseIconos}${name_mark}.png`,
                     iconSize:[50,50]
                 })
                 arrMarkers.push(
-                    <Marker key={name_mark} position={locate} icon={customIcon}>
+                    <Marker key={label} position={locate} icon={customIcon}>
                         <Popup>
                             {label}
                         </Popup>
