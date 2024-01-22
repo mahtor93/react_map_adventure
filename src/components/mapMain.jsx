@@ -28,9 +28,7 @@ const RenderMap = ({markers}) =>{
             console.error('Error al obtener el valor:', error);
         });
     },[]);
-
- 
-
+    
     const MapComponent = () => {
         const map = useMap();
         useEffect(()=>{
