@@ -15,7 +15,6 @@ export const getMapData = async (zoneId) =>{
         console.error('Error al obtener datos: ',error)
         throw error;
     }
-
 }
 
 export const getZonesMap = async () =>{
