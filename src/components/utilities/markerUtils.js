@@ -3,6 +3,7 @@ import { Marker, Popup } from 'react-leaflet';
 import { Icon, latLng } from 'leaflet';
 const rutaBaseIconos = '/map_utilities/markers/land/';
 
+/*Esta utilidad permite cargar un listado de marcadores a partir de un objeto traido desde la base de datos */
 const renderMarkers = (markers) =>{
 
     const arrMarkers = [];
