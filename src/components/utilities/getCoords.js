@@ -1,5 +1,5 @@
 "use client";
-
+/*Consulta la API para obtener la ubicación del dispositivo*/
 export default function obtenerGPS(){
     return new Promise((resolve,reject)=>{
         if(navigator.geolocation){

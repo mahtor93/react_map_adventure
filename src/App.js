@@ -11,8 +11,9 @@ function App() {
   const[zoneCoords, setZoneCoords] = useState(null);
 
   const fetchMapData = async () =>{
+    /*Obtención de las coordenadas de marcadores*/
     try{
-      const mapData = await getMapData();
+      const mapData = await getMapData(zoneCoords.id_group_mark);
       setMarcas(mapData.marks);
     }catch(error){
       console.error('Error fetching map data: ',error);

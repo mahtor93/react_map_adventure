@@ -1,7 +1,7 @@
 //Obtener set de marcas desde el mapa. (Son varias)
-export const getMapData = async () =>{
+export const getMapData = async (zoneId) =>{
     try{
-        const res = await fetch('http://localhost:3001/users') //obtiene datos desde endpoint declarado index.js
+        const res = await fetch(`http://localhost:3001/markers/${zoneId}`) //obtiene datos desde endpoint declarado index.js
         if(!res.ok){
             throw new Error('Error en la red');
         }
@@ -15,7 +15,6 @@ export const getMapData = async () =>{
         console.error('Error al obtener datos: ',error)
         throw error;
     }
-
 }
 
 export const getZonesMap = async () =>{
