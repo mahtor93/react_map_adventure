@@ -34,6 +34,7 @@ const DropdownZones=({sendZoneData})=> {
         sendZoneData(selectedZone);
     }
 
+
     return(
 <div>
     <select className="form-select" onChange={handleZoneChange} aria-label='Default select example'>
@@ -49,7 +50,3 @@ const DropdownZones=({sendZoneData})=> {
 }
 
 export default DropdownZones;
-
-/*
-
-*/
