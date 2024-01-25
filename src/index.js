@@ -1,18 +1,35 @@
 import './index.css';
 import 'react-bootstrap';
 import 'bootstrap';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import NavBar from './Navbar.jsx';
 import reportWebVitals from './reportWebVitals';
+import Login from './login.jsx';
+import Map from './mapContainer.jsx';
+import ErrorPage from '../src/errorPage.jsx';
+
+const router = createBrowserRouter([{
+  path:'/',
+  element:<App />,
+  errorElement:<ErrorPage />
+},{
+  path:'/mapa',
+  element:<Map />
+},{
+  path:'/login',
+  element:<Login />
+}
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavBar/>
-    <App />
+    <NavBar />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 

@@ -7,9 +7,9 @@ import renderMarkers from './utilities/markerUtils';
 
 
 
-const RenderMap = ({markers}) =>{
+const RenderMap = ({markers,zonePan}) =>{
     
-    const [position, setPosition]= useState({ lat: -36.76506926258808, lng: -73.17547131071257 });
+    const [position, setPosition]= useState(zonePan?zonePan:{ lat: -36.76506926258808, lng: -73.17547131071257 });
     const [centerMap , setCenterMap]= useState(position);
     const [numAvatar, setNumAvatar] = useState(0);
     const [mapLayer, setMapLayer] = useState('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
@@ -19,6 +19,7 @@ const RenderMap = ({markers}) =>{
     
 
     useEffect(()=>{
+        if(!zonePan){
         obtenerGPS()
         .then(resultado =>{
             setPosition(resultado);
@@ -27,7 +28,10 @@ const RenderMap = ({markers}) =>{
         .catch(error=>{
             console.error('Error al obtener el valor:', error);
         });
-    },[]);
+    }else{
+        setCenterMap(zonePan);
+    }
+    },[zonePan]);
     
     const MapComponent = () => {
         const map = useMap();
