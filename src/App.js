@@ -80,11 +80,11 @@ function App() {
         </div>
         <div className="form-group pb-2">
           <label for="lat">Latitud:</label>
-          <input className='form-control' value={position?position.lat:''} readOnly />
+          <input className='form-control' value={position?position.lat:''} />
         </div>
         <div className="form-group pb-2">
           <label for="lng">Longitud:</label>
-          <input className='form-control' type='text' value={position?position.lng:''} readOnly />
+          <input className='form-control' type='text' value={position?position.lng:''} />
         </div>
         <div className='form-group pb-2'>
           <label for='zone'>Zona donde estás:</label>
