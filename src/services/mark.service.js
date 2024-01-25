@@ -1,6 +1,6 @@
 export const setMarker = async (markerData) =>{
     try{
-        const res= await fetch('http://localhost:3001/createMarker',{
+        const res= await fetch('https://mapadventure-backend.onrender.com/createMarker',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
