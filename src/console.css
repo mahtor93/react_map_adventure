@@ -1,0 +1,61 @@
+body{
+    background-color: #00000f;
+    font-family: 'Courier New', Courier, monospace;
+    color: greenyellow;
+    font-style: italic;
+    font-size: 14px;
+    height: 100%;
+    margin: 10;
+}
+
+.console{
+    margin:5px;
+}
+
+.console-structure{
+    border: 1px solid greenyellow;
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 50vh;
+    width: auto;
+    overflow: hidden;
+    position: relative;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+
+.welcome-text{
+    margin: 15px;    
+}
+
+
+.welcome-title{
+    text-align: center;
+}
+
+.menubar{
+    color:#00000f;
+    top:0;
+    background-color: greenyellow;
+    margin-bottom:0;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+.console-line input{
+    background-color: #00000f;
+    border-style: none;
+    color: greenyellow;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 5px;
+    
+}
+
+.console-line input:focus{
+    outline: none;
+
+}

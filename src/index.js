@@ -1,5 +1,5 @@
 import './index.css';
-import 'react-bootstrap';
+//import 'react-bootstrap';
 import 'bootstrap';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
@@ -9,7 +9,9 @@ import NavBar from './Navbar.jsx';
 import reportWebVitals from './reportWebVitals';
 import Login from './login.jsx';
 import Map from './mapContainer.jsx';
+import Console from './console.jsx';
 import ErrorPage from '../src/errorPage.jsx';
+
 
 const router = createBrowserRouter([{
   path:'/',
@@ -21,6 +23,9 @@ const router = createBrowserRouter([{
 },{
   path:'/login',
   element:<Login />
+},{
+  path:'/consola',
+  element:<Console/>
 }
 ]);
 
