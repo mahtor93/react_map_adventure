@@ -1,7 +1,7 @@
 body{
     background-color: #00000f;
     font-family: 'Courier New', Courier, monospace;
-    color: greenyellow;
+    color: aqua;
     font-style: italic;
     font-size: 14px;
     height: 100%;
@@ -13,7 +13,7 @@ body{
 }
 
 .console-structure{
-    border: 1px solid greenyellow;
+    border: 1px solid aqua;
     padding-top: 5px;
     padding-left: 5px;
     height: 40vh;
@@ -38,7 +38,7 @@ body{
 .menubar{
     color:#00000f;
     top:0;
-    background-color: greenyellow;
+    background-color: aqua;
     margin-bottom:0;
     text-align: center;
     border-top-left-radius: 5px;
@@ -49,7 +49,7 @@ body{
 .console-line input{
     background-color: #00000f;
     border-style: none;
-    color: greenyellow;
+    color: aqua;
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 5px;
     
