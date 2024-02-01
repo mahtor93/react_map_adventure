@@ -13,7 +13,7 @@ function Console() {
             setLines([...lines, inputLineValue]); //A todas las lineas existentes, añade una nueva(abajo se le suma el ROOT:\>+{line})
             console.log(inputLineValue); //este es el valor ingresado en la consola.
             setInputLineValue(''); //el valor se instancia en un string vacío
-            readConsoleLine(inputLineValue); //Ingresamos el valor del comando para evaluar si 
+            readConsoleLine(inputLineValue.toLowerCase()); //Ingresamos el valor del comando para evaluar si 
             console.log(lines);
         }
     };
