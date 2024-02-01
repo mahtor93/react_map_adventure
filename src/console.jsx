@@ -2,46 +2,60 @@ import './console.css';
 import React, { useEffect, useState, useRef } from 'react';
 
 function Console() {
-    const[counterLines,setCounterLines]= useState(1); //contador de líneas, para que cada línea tenga un id único
     const[inputLineValue, setInputLineValue]= useState('');
     const[lines, setLines] = useState([]); //almacena los comandos insertados
+    const[isHidden, setIsHidden] = useState(false);
+
     const inputRef = useRef(null);
 
     const handleReturn = (e) =>{
         if(e.key === 'Enter'|| e.key==='Return'){
-            console.log('Enter Pressed');
-            setCounterLines(counterLines+1);
-            setLines([...lines, inputLineValue]);
-            console.log(inputLineValue);
-            setInputLineValue('');
+            setLines([...lines, inputLineValue]); //A todas las lineas existentes, añade una nueva(abajo se le suma el ROOT:\>+{line})
+            console.log(inputLineValue); //este es el valor ingresado en la consola.
+            setInputLineValue(''); //el valor se instancia en un string vacío
+            readConsoleLine(inputLineValue); //Ingresamos el valor del comando para evaluar si 
+            console.log(lines);
         }
-    }
+    };
 
-    function readConsoleLine(command, currentLine){
+    const commandLines ={
+        "run":`'run' ----- Ejecutar un programa`,
+        "cls":`'cls' ----- Limpia la consola`,
+        "install":`'install' ----- Instala un programa`,
+        "listProgram":`'lsprg' ----- Lista programas instalados`,
+        "rmprogr":`'rmprg' ----- Borra un programa`
+        }
+
+    function readConsoleLine(command){
         switch(command){
+            case '':
+                setLines([...lines, 'ROOT:\\>'])
+                break;
+            case 'run map':
+                break;
             case 'help':
                 console.log('Imprimiendo ayuda');
-                //showHelp(currentLine);
+                setLines([...lines, commandLines.cls, commandLines.install,commandLines.run, commandLines.listProgram])
                 break;
             case 'cls':
                 console.log('Clear Console');
-                //clearConsole();
+                setIsHidden(true);
+                setLines([]);
                 break;
             case 'welcome':
                 console.log('imprimiendo welcome');
-                //showWelcome(currentLine);
+                //showWelcome();
                 break;
             default:
                 console.log('Error Comando');
-                //defaultReturn(currentLine);
+                setLines([...lines,`El comando "${inputLineValue}" no existe`,`Escribe 'help' para obtener una lista de comandos`])
                 break;
         }
     }
     
-
     useEffect(()=>{
         if(inputRef.current){
-            inputRef.current.focus();
+            inputRef.current.focus(); //cambia el foco al último input creado
         }
     },[lines])
    
@@ -49,25 +63,33 @@ function Console() {
         <div className="console">
             <div className="menubar">::SigilCorp Console System::</div>
             <div id="console-structure" className="console-structure">
-                <div className="welcome-text">
+                <div style={{display:isHidden?'none':'block'}} className="welcome-text">
                     <p className='welcome-title'>::SigilCorp Console System::</p>
                     <span>
-                        <p>Para ver una lista de comandos escribe {'>'} <b>Help</b></p>
-                        <p>Para ver info de un comando específico escribe
+                        <p>Para ver una lista de comandos escribe<br/>
+                         {'>'} <b>Help</b></p>
+                        
+                        Para ver información de un comando específico escribe
                             <br/>
-                            {'>'} <b>el_comando -h</b></p>
+                            {'>'} <b>el_comando -h</b>
                         <hr/>
                     </span>
                 </div>
                 {/*Aquí se implementan las líneas de la consola */}
                 <div>
+                    {/*Aquí se escriben las líneas Existentes */}
+
                     {lines.map((line,index)=>(
                         <div key={`line-${index}`} className='console-line'>
-                            [{index}] ROOT:\{'>'} {line}
+                            {line}
                         </div>
+                        
                     ))}
+                    
+
+                {/*Aquí se escriben las nuevas líneas */}
                     <div key={`line-${lines.length}`} className='console-line'>
-                        [{lines.length}] ROOT:\{'>'}
+                        ROOT:\{'>'} 
                         <input
                             ref={inputRef}
                             value={inputLineValue}
