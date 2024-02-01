@@ -18,11 +18,8 @@ function NavBar(){
                                 <li className="nav-item">
                                 <a className="nav-link" href={`/`}>Inicio</a>
                                 </li>
-                                <li className="nav-item">
-                                <a className="nav-link" href={`/mapa`}>Mapa</a>
-                                </li>
                                 <li className='nav-item'>
-                                    <a className='nav-link' href={`/consola`}>Consola</a>
+                                    <a className='nav-link' href={`/crear-marcador`}>Mark</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link text-bg-light" style={{borderRadius:10}}  href={`/login`}>Login</a>

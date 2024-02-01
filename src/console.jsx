@@ -11,10 +11,8 @@ function Console() {
     const handleReturn = (e) =>{
         if(e.key === 'Enter'|| e.key==='Return'){
             setLines([...lines, inputLineValue]); //A todas las lineas existentes, añade una nueva(abajo se le suma el ROOT:\>+{line})
-            console.log(inputLineValue); //este es el valor ingresado en la consola.
             setInputLineValue(''); //el valor se instancia en un string vacío
             readConsoleLine(inputLineValue.toLowerCase()); //Ingresamos el valor del comando para evaluar si 
-            console.log(lines);
         }
     };
 
@@ -26,16 +24,22 @@ function Console() {
         "rmprogr":`'rmprg' ----- Borra un programa`
         }
 
+    
+
     function readConsoleLine(command){
         switch(command){
             case '':
                 setLines([...lines, 'ROOT:\\>'])
                 break;
+            case 'lsprg':
+                setLines([...lines,'- Programas Instalados -','map ----- Visualizador de Mapa'])
+                break;
             case 'run map':
+                window.location.href = '/mapa';
                 break;
             case 'help':
                 console.log('Imprimiendo ayuda');
-                setLines([...lines, commandLines.cls, commandLines.install,commandLines.run, commandLines.listProgram])
+                setLines([...lines, '- Lista de Comandos -', commandLines.cls, commandLines.install,commandLines.run, commandLines.listProgram])
                 break;
             case 'cls':
                 console.log('Clear Console');
@@ -64,7 +68,7 @@ function Console() {
             <div className="menubar">::SigilCorp Console System::</div>
             <div id="console-structure" className="console-structure">
                 <div style={{display:isHidden?'none':'block'}} className="welcome-text">
-                    <p className='welcome-title'>::SigilCorp Console System::</p>
+                    <p className='welcome-title'>S ∴ C ∴ C ∴ S ∴</p>
                     <span>
                         <p>Para ver una lista de comandos escribe<br/>
                          {'>'} <b>Help</b></p>
